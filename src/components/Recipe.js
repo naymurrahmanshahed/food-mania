@@ -10,11 +10,11 @@ const Recipe = ({ recipe }) => {
         <span className="recipe-publisher text-sm text-cyan-500 font-medium">
           {recipe.publisher}
         </span>
-        <h4 className="recipe-title text-2xl truncate font-semibold">
+        <h4 className="recipe-title text-2xl truncate font-semibold text-red-500">
           {recipe.title}
         </h4>
         <Link
-          to="/"
+          to={`/recipe-item/${recipe.id}`}
           className="text-red-50 p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-2 bg-gradient-to-br from-red-400 to-red-500  inline-block  shadow-md  shadow-red-200 hover:shadow-lg hover:shadow-red-300 "
         >
           View Recipe

@@ -4,6 +4,7 @@ import Favourites from "./components/Favourites";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import RecipeItem from "./components/RecipeItem";
 
 function App() {
   const [searchItem, setSeachItem] = useState("");
@@ -64,6 +65,7 @@ function App() {
           />
 
           <Route path="/favourites" element={<Favourites />} />
+          <Route path="/recipe-item/:id" element={<RecipeItem />} />
         </Routes>
       </div>
 
