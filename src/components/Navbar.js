@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ handleSearch, searchItem, setSeachItem, input }) => {
@@ -24,7 +23,7 @@ const Navbar = ({ handleSearch, searchItem, setSeachItem, input }) => {
           placeholder="Search Items...."
         />
       </form>
-      <ul className="flex gap-5 text-gray-400">
+      <ul className="flex gap-5 ">
         <li>
           <NavLink
             end
