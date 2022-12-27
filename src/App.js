@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Favourites from "./components/Favourites";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -12,16 +12,18 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const input = useRef(null);
+  const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
 
     //api call
     getData(searchItem);
-    console.log(recipes);
+
     input.current.blur();
     setSeachItem("");
     setRecipes([]);
     setError("");
+    navigate("/");
   };
 
   // data fatching from api

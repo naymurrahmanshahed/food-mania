@@ -5,10 +5,26 @@ const RecipeItem = () => {
   const { id } = useParams();
 
   const { data, loading, error } = useDataFetch(id);
-  console.log(data);
+
+  const durationCalc = (duration) => {
+    if (!duration) return null;
+    if (!String(duration).includes(".")) {
+      return duration + "h";
+    }
+    if (String(duration).includes(".")) {
+      const splitDuration = String(duration).split(".");
+
+      const hours = splitDuration[0] + "h";
+
+      const miniutes = String(+(splitDuration[1] / 100) * 60).split(".");
+      const min = miniutes[0] + "min";
+
+      return hours + min;
+    }
+  };
   return (
     <>
-      {loading ? (
+      {loading && data ? (
         <p className="text-center">{error ? error : "...loading"}</p>
       ) : (
         <>
@@ -50,7 +66,10 @@ const RecipeItem = () => {
               <div className="serving_cooking-time flex gap-5 uppercase tracking-widest font-semibold text-rose-300">
                 <div className="servings">Servings: {data.servings} people</div>
                 <div className="cooking-time">
-                  Cooking Time: {data.cooking_time}{" "}
+                  Cooking Time:{" "}
+                  {data?.cooking_time < 60
+                    ? String(data.cooking_time) + "min"
+                    : durationCalc(data?.cooking_time / 60)}
                 </div>
               </div>
 

@@ -14,8 +14,8 @@ export const useDataFetch = (id) => {
         );
         if (!res.ok) throw new Error("Something Went wrong");
         const data = await res.json();
-        setLoading(false);
         setData(data?.data?.recipe);
+        setLoading(false);
       } catch (err) {
         setError(err.message);
       }
