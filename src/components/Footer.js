@@ -5,7 +5,7 @@ const Footer = () => {
         Food<span className=" text-red-500 ">Mania</span>
       </h2>
       <p className="text-gray-700">
-        &copy;2022 foodmania. All rights reserved.
+        &copy; 2022 foodmania. All rights reserved.
       </p>
     </footer>
   );

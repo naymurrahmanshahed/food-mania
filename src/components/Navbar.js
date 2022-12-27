@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({ handleSearch, searchItem, setSeachItem, input }) => {
+const Navbar = ({
+  handleSearch,
+  searchItem,
+  setSeachItem,
+  input,
+  saveItem,
+}) => {
   const navActive = ({ isActive }) => {
     return {
       color: isActive ? "#ef4444" : null,
@@ -40,7 +46,8 @@ const Navbar = ({ handleSearch, searchItem, setSeachItem, input }) => {
             style={navActive}
             className=" text-gray-400 hover:text-gray-600 duration-300  "
           >
-            Favourites <span className="text-cyan-500">(10)</span>
+            Favourites{" "}
+            <span className="text-cyan-500">({saveItem.length})</span>
           </NavLink>
         </li>
       </ul>
