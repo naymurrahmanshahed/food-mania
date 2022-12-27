@@ -4,6 +4,7 @@ import Favourites from "./components/Favourites";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
 import RecipeItem from "./components/RecipeItem";
 
 function App() {
@@ -108,6 +109,8 @@ function App() {
               />
             }
           />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
 
