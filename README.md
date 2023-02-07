@@ -7,7 +7,6 @@ Tech Mania is an online recipe store application designed for food enthusiasts w
 - User-friendly interface
 - Search for recipes by ingredients and cuisine type
 - Save and manage recipes in personal collections
-- Create shopping lists based on ingredients needed for recipe
 - View detailed recipe instructions with step-by-step photos
 
 ## Tools Used
